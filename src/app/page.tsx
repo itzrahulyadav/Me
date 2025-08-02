@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-// A simple SVG icon to replicate the one in the button.
 const MeditationIcon = () => (
   <svg
     width="16"
@@ -17,7 +16,6 @@ const MeditationIcon = () => (
   </svg>
 );
 
-// An SVG icon for the scroll indicator arrow.
 const ScrollArrowIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-1.5">
         <path d="M12 5v14"/>
