@@ -92,7 +92,8 @@ const HomePage: NextPage = () => {
       {/* Section 1: Hero */}
       <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
         <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20 ">
-          <div className="bg-[#111111] border border-gray-950 text-white font-bold text-2xl sm:text-sm px-4 py-2 rounded-xl backdrop-blur-2xl">
+          {/* MODIFIED THIS LINE */}
+          <div className="bg-black/30 border border-white/20 text-white text-xs sm:text-sm px-4 py-2 rounded-xl backdrop-blur-lg font-medium">
             Rahul Yadav – Software Engineer / Builder in Cloud
           </div>
         </div>
