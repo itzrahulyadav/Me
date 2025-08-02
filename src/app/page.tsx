@@ -98,10 +98,12 @@ const HomePage: NextPage = () => {
         </div>
 
         <main className="flex flex-col items-center justify-center text-center z-10">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter max-w-5xl leading-tight">
-            Not your average software engineer.
-          </h1>
-          <p className="mt-6 text-xl sm:text-2xl md:text-3xl text-gray-400 max-w-3xl">
+          <div className="relative inline-block mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter max-w-5xl leading-tight">
+              Not your average software engineer.
+            </h1>
+          </div>
+          <p className="mt-2 text-xl sm:text-2xl md:text-3xl text-gray-400 max-w-3xl">
             I build in Cloud &apos; with Clarity and optimization
           </p>
           <button className="mt-12 flex items-center justify-center space-x-2.5 bg-[#090909] border border-gray-800 hover:border-gray-600 hover:bg-[#111111] text-gray-200 font-medium py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
@@ -185,7 +187,7 @@ const HomePage: NextPage = () => {
         <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block relative mb-4">
                 <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Tools I Crafted</h2>
-                <span className="absolute -top-3 -right-4 bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-1 rounded-full transform -rotate-12">for myself</span>
+                <span className="absolute -top-3 -right-4 bg-red-200 text-gray-500 text-xs font-semibold px-2 py-1 rounded-full transform -rotate-12">for myself</span>
             </div>
             <p className="text-lg text-gray-500">Specialized solutions for specific challenges</p>
 
@@ -194,10 +196,10 @@ const HomePage: NextPage = () => {
                 <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ContentStudioIcon />
-                    <h4 className="font-bold text-lg mt-4 text-gray-900">LinkedIn Content Studio</h4>
-                    <p className="mt-2 text-gray-600">AI-powered content creation and scheduling platform that helps professionals maintain consistent, high-quality LinkedIn presence.</p>
+                    <h4 className="font-bold text-lg mt-4 text-gray-900">awsx</h4>
+                    <p className="mt-2 text-gray-600">Ever stuck in a network reachability issue, awsx helps you check connectivity between two endpoints</p>
                     <div className="mt-6 flex justify-between items-center">
-                        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Content Creation</span>
+                        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Networking</span>
                         <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Explore Tool <ArrowRightIcon />
                         </div>
@@ -205,7 +207,7 @@ const HomePage: NextPage = () => {
                 </a>
 
                 {/* Card 2 */}
-                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                <a href="https://github.com/itzrahulyadav/awsx" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-500 to-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <CursorIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">Angular Cursor Rules</h4>
