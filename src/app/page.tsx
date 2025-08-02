@@ -51,7 +51,7 @@ const InstagramIcon = () => (
     </svg>
 );
 
-// --- NEW ICONS FOR TOOLS SECTION ---
+// --- ICONS FOR TOOLS SECTION ---
 
 const ContentStudioIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
@@ -191,46 +191,50 @@ const HomePage: NextPage = () => {
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                 {/* Card 1 */}
-                <div className="border border-gray-200 p-6 rounded-xl">
+                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ContentStudioIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">LinkedIn Content Studio</h4>
                     <p className="mt-2 text-gray-600">AI-powered content creation and scheduling platform that helps professionals maintain consistent, high-quality LinkedIn presence.</p>
                     <div className="mt-6 flex justify-between items-center">
                         <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Content Creation</span>
-                        <a href="#" className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
+                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Explore Tool <ArrowRightIcon />
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 {/* Card 2 */}
-                <div className="border border-gray-200 p-6 rounded-xl">
+                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-500 to-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <CursorIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">Angular Cursor Rules</h4>
                     <p className="mt-2 text-gray-600">AI-powered cursor interaction generator for Angular applications that creates custom pointer behaviors based on UI elements.</p>
                     <div className="mt-6 flex justify-between items-center">
                         <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Developer Tool</span>
-                        <a href="#" className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
+                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Explore Tool <ArrowRightIcon />
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 {/* Card 3 */}
-                <div className="border border-gray-200 p-6 rounded-xl">
+                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ClockIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">Am I a Top Performer?</h4>
                     <p className="mt-2 text-gray-600">Interactive assessment tool that evaluates your professional performance and provides personalized insights for growth and improvement.</p>
                     <div className="mt-6 flex justify-between items-center">
                         <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Self-Assessment</span>
-                        <a href="#" className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
+                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Explore Tool <ArrowRightIcon />
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 {/* Card 4 */}
-                <div className="border border-gray-200 p-6 rounded-xl">
+                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <div className="flex justify-between items-start">
                         <ClockIcon />
                         <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">New</span>
@@ -239,11 +243,11 @@ const HomePage: NextPage = () => {
                     <p className="mt-2 text-gray-600">I&apos;m working on several exciting new tools that will help you boost productivity, improve your workflow, and solve common challenges. Stay tuned!</p>
                     <div className="mt-6 flex justify-between items-center">
                         <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">In Development</span>
-                        <a href="#" className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
+                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Follow Me Above <ArrowRightIcon className="rotate-[-45deg] group-hover:rotate-0" />
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
       </section>
