@@ -131,7 +131,7 @@ const HomePage: NextPage = () => {
           </h2>
           <p className="mt-8 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Some chase feature velocity. I chase zero downtime. 
-            <span className="bg-black text-white px-2 py-1 rounded-md">From Dockerfiles to deployment, every step is intentional.</span> 
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-white px-2 py-1 rounded-md">From Dockerfiles to deployment, every step is intentional.</span> 
             If your infra isn’t predictable, it’s just expensive chaos. Let’s build something that runs smooth — no smoke, no mirrors.
           </p>
 
