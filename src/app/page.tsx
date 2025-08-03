@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
-// Using Geist to match your layout.tsx setup
 import { Geist } from 'next/font/google';
+import Image from 'next/image'; // Import the Next.js Image component
 
-// Initialize the font with desired subsets
 const geist = Geist({ subsets: ['latin'] });
 
-// --- ICONS ---
+// --- (All your other icon components remain here, unchanged) ---
 
 const MeditationIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -51,8 +50,6 @@ const InstagramIcon = () => (
     </svg>
 );
 
-// --- ICONS FOR TOOLS SECTION ---
-
 const ContentStudioIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
         <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
@@ -85,8 +82,20 @@ const ArrowRightIcon = ({ className = "" }: { className?: string }) => (
     </svg>
 );
 
-
 const HomePage: NextPage = () => {
+  const skills = [
+    { name: 'AWS', image: '/icons/icons8-amazon-web-services.svg' },
+    { name: 'GCP', image: '/icons/icons8-google-cloud.svg' },
+    { name: 'Azure', image: '/icons/icons8-azure.svg' },
+    { name: 'Kubernetes', image: '/icons/icons8-kubernetes.svg' },
+    { name: 'Python', image: '/icons/icons8-python.svg' },
+    { name: 'Go (Golang)', image: '/icons/icons8-go-logo.svg' },
+    { name: 'Terraform', image: '/icons/icons8-terraform.svg' },
+    { name: 'ArgoCD', image: '/icons/argoprojio-icon.svg' },
+    { name: 'Networking', image: '/icons/icons8-decentralized-network-100.png' },
+    { name: 'Security', image: '/icons/icons8-protect-94.png' },
+  ];
+
   return (
     <div className={geist.className}>
       {/* Section 1: Hero */}
@@ -121,7 +130,7 @@ const HomePage: NextPage = () => {
 
       {/* Section 2: Content */}
       <section className="bg-white text-black py-20 px-4 sm:py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-gray-900">
             Let&apos;s build something meaningful.
           </h2>
@@ -138,7 +147,7 @@ const HomePage: NextPage = () => {
           </h3>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {/* Social Link Item - LinkedIn */}
+            {/* Social Link Items... */}
             <a href="https://www.linkedin.com/in/rahul-yadav-2a4b3b199/" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-blue-600 transition-colors">
                 <LinkedInIcon />
@@ -146,7 +155,6 @@ const HomePage: NextPage = () => {
               <h4 className="font-bold mt-4 text-gray-900">LinkedIn</h4>
               <p className="text-sm text-gray-500">Professional</p>
             </a>
-            {/* Social Link Item - X */}
             <a href="https://x.com/rxhxlyadav" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-black transition-colors">
                 <XIcon />
@@ -154,7 +162,6 @@ const HomePage: NextPage = () => {
               <h4 className="font-bold mt-4 text-gray-900">X (Twitter)</h4>
               <p className="text-sm text-gray-500">Most Active</p>
             </a>
-            {/* Social Link Item - GitHub */}
             <a href="https://github.com/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-gray-800 transition-colors">
                 <GitHubIcon />
@@ -162,7 +169,6 @@ const HomePage: NextPage = () => {
               <h4 className="font-bold mt-4 text-gray-900">GitHub</h4>
               <p className="text-sm text-gray-500">Code & Projects</p>
             </a>
-            {/* Social Link Item - LeetCode */}
              <a href="https://leetcode.com/u/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-yellow-500 transition-colors">
                 <LeetCodeIcon />
@@ -170,7 +176,6 @@ const HomePage: NextPage = () => {
               <h4 className="font-bold mt-4 text-gray-900">LeetCode</h4>
               <p className="text-sm text-gray-500">Problem Solving</p>
             </a>
-            {/* Social Link Item - Instagram */}
             <a href="https://www.instagram.com/_rxhxlx_" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-pink-600 transition-colors">
                 <InstagramIcon />
@@ -182,8 +187,32 @@ const HomePage: NextPage = () => {
         </div>
       </section>
 
+      {/* --- SKILLS SECTION --- */}
+      <section className="bg-gray-50 text-black py-20 px-4 sm:py-24">
+        <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Technologies I Work With</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">From cloud infrastructure to backend services, these are the tools and technologies I use to build robust and scalable solutions.</p>
+            
+            <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+              {skills.map((skill) => (
+                <div key={skill.name} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  {/* CORRECTED: Using next/image for optimized images */}
+                  <Image
+                    src={skill.image}
+                    alt={`${skill.name} logo`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                  <h4 className="font-semibold text-lg mt-4 text-gray-800">{skill.name}</h4>
+                </div>
+              ))}
+            </div>
+        </div>
+      </section>
+
       {/* Section 3: Tools I Crafted */}
-      <section className="bg-white text-black pb-20 px-4 sm:pb-24 md:pb-32">
+      <section className="bg-white text-black pt-20 pb-20 px-4 sm:pt-24 sm:pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block relative mb-4">
                 <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Tools I Crafted</h2>
@@ -192,8 +221,8 @@ const HomePage: NextPage = () => {
             <p className="text-lg text-gray-500">Specialized solutions for specific challenges</p>
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                {/* Card 1 */}
-                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                {/* (Your tool cards remain here, unchanged) */}
+                <a href="https://github.com/itzrahulyadav/awsx" target="blank" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ContentStudioIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">awsx</h4>
@@ -205,8 +234,6 @@ const HomePage: NextPage = () => {
                         </div>
                     </div>
                 </a>
-
-                {/* Card 2 */}
                 <a href="https://github.com/itzrahulyadav/awsx" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-500 to-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <CursorIcon />
@@ -219,8 +246,6 @@ const HomePage: NextPage = () => {
                         </div>
                     </div>
                 </a>
-
-                {/* Card 3 */}
                 <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ClockIcon />
@@ -233,8 +258,6 @@ const HomePage: NextPage = () => {
                         </div>
                     </div>
                 </a>
-
-                {/* Card 4 */}
                 <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <div className="flex justify-between items-start">
