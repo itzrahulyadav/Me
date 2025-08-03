@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import { Geist } from 'next/font/google';
 import Image from 'next/image'; // Import the Next.js Image component
+import Link from 'next/link';
+
 
 const geist = Geist({ subsets: ['latin'] });
 
@@ -110,10 +112,13 @@ const HomePage: NextPage = () => {
           <p className="mt-2 text-xl sm:text-2xl md:text-3xl text-gray-400 max-w-3xl">
             My cloud setup runs smoother than your situationship.
           </p>
+
+          <Link href="/content">
           <button className="mt-12 flex items-center justify-center space-x-2.5 bg-[#090909] border border-gray-800 hover:border-gray-600 hover:bg-[#111111] text-gray-200 font-medium py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             <MeditationIcon />
             <span>Explore</span>
           </button>
+          </Link>
         </main>
 
         <div className="absolute bottom-8 sm:bottom-10 text-gray-500 flex items-center animate-bounce z-10">
