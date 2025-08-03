@@ -94,9 +94,11 @@ const HomePage: NextPage = () => {
       <section className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 relative overflow-hidden">
         {/* MODIFIED: Added a wrapper div for the gradient border */}
         <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20">
-            <div className="bg-black/50 text-white text-xs sm:text-sm px-4 py-2 rounded-lg backdrop-blur-lg font-medium">
-              Rahul Yadav – Software Engineer / Building in Cloud
+          <a href="https://www.credly.com/users/aurafarmer/badges#credly" target='blank'>
+            <div className="bg-black/50 text-white text-xs sm:text-sm px-4 py-2 rounded-xl backdrop-blur-lg font-medium">
+              Řahul Yadav – Software Engineer / Building in Cloud
             </div>
+          </a>
         </div>
 
         <main className="flex flex-col items-center justify-center text-center z-10">
