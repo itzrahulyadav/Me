@@ -94,11 +94,9 @@ const HomePage: NextPage = () => {
       <section className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 relative overflow-hidden">
         {/* MODIFIED: Added a wrapper div for the gradient border */}
         <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20">
-          {/* <div className="rounded-xl p-[1.5px] bg-gradient-to-r from-purple-400 to-blue-500"> */}
             <div className="bg-black/50 text-white text-xs sm:text-sm px-4 py-2 rounded-lg backdrop-blur-lg font-medium">
               Rahul Yadav – Software Engineer / Building in Cloud
             </div>
-          {/* </div> */}
         </div>
 
         <main className="flex flex-col items-center justify-center text-center z-10">
@@ -131,7 +129,7 @@ const HomePage: NextPage = () => {
           </h2>
           <p className="mt-8 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Some chase feature velocity. I chase zero downtime. 
-            <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-white px-2 py-1 rounded-md">From Dockerfiles to deployment, every step is intentional.</span> 
+            <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent px-2 py-1 rounded-md">From Dockerfiles to deployment, every step is intentional.</span> 
             If your infra isn’t predictable, it’s just expensive chaos. Let’s build something that runs smooth — no smoke, no mirrors.
           </p>
 
