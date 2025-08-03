@@ -26,7 +26,6 @@ const ShareIcon = () => (
 );
 
 
-// --- MOCK DATA FOR BLOG POSTS ---
 const posts = [
   {
     id: 1,
@@ -82,13 +81,29 @@ const ContentPage: NextPage = () => {
               <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="#090909"/><path d="M11 23V9H18.5C20.9853 9 23 11.0147 23 13.5C23 15.9853 20.9853 18 18.5 18H14.5L11 23Z" fill="white"/><path d="M14.5 18L20 23H15.5L11 18H14.5Z" fill="white"/></svg>
               <span>News Feed</span>
             </Link>
+            <div className="rounded-xl overflow-hidden border border-gray-200 mt-4">
+              <video
+                src="https://eks-rxhxl.s3.ap-south-1.amazonaws.com/What_Is_a_Kubernetes_Operator_.mp4" 
+                controls={true}
+                loop
+                playsInline
+                width="100%"
+                className="w-full h-auto"
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </aside>
 
         {/* --- MAIN CONTENT FEED --- */}
         <main className="col-span-1 md:col-span-2">
-          <div className="border-b border-gray-200 pb-4 mb-4">
-            <h1 className="text-2xl font-bold text-black">Home</h1>
+          <div className="space-y-4">
+            <Link href="/" className="text-2xl font-bold text-black flex items-center space-x-2">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="#090909"/><path d="M11 23V9H18.5C20.9853 9 23 11.0147 23 13.5C23 15.9853 20.9853 18 18.5 18H14.5L11 23Z" fill="white"/><path d="M14.5 18L20 23H15.5L11 18H14.5Z" fill="white"/></svg>
+              <span>News Feed</span>
+            </Link>
           </div>
           <div className="space-y-4">
             {posts.map(post => (
