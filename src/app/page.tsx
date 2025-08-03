@@ -4,7 +4,7 @@ import Image from 'next/image'; // Import the Next.js Image component
 
 const geist = Geist({ subsets: ['latin'] });
 
-// --- (All your other icon components remain here, unchanged) ---
+// --- ICON COMPONENTS ---
 
 const MeditationIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,9 +26,9 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const XIcon = () => (
+const MailIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-gray-700 group-hover:text-white transition-colors">
-        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zm-1.61 19.93h2.543L5.41 2.22h-2.61l14.738 18.862z"></path>
+        <path d="M24 4H0V20H24V4ZM12 13.5L3 7.5H21L12 13.5Z" />
     </svg>
 );
 
@@ -59,8 +59,6 @@ const ContentStudioIcon = () => (
         <line x1="10" y1="9" x2="8" y2="9"/>
     </svg>
 );
-
-
 
 const ClockIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
@@ -93,11 +91,14 @@ const HomePage: NextPage = () => {
   return (
     <div className={geist.className}>
       {/* Section 1: Hero */}
-      <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
-        <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20 ">
-          <div className="bg-black/30 border border-white/20 text-white text-xs sm:text-sm px-4 py-2 rounded-xl backdrop-blur-lg font-medium">
-            Rahul Yadav – Software Engineer / Builder in Cloud
-          </div>
+      <section className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 relative overflow-hidden">
+        {/* MODIFIED: Added a wrapper div for the gradient border */}
+        <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20">
+          {/* <div className="rounded-xl p-[1.5px] bg-gradient-to-r from-purple-400 to-blue-500"> */}
+            <div className="bg-black/50 text-white text-xs sm:text-sm px-4 py-2 rounded-lg backdrop-blur-lg font-medium">
+              Rahul Yadav – Software Engineer / Building in Cloud
+            </div>
+          {/* </div> */}
         </div>
 
         <main className="flex flex-col items-center justify-center text-center z-10">
@@ -107,7 +108,7 @@ const HomePage: NextPage = () => {
             </h1>
           </div>
           <p className="mt-2 text-xl sm:text-2xl md:text-3xl text-gray-400 max-w-3xl">
-            My cloud setup?Runs smoother than your situationship.
+            My cloud setup runs smoother than your situationship.
           </p>
           <button className="mt-12 flex items-center justify-center space-x-2.5 bg-[#090909] border border-gray-800 hover:border-gray-600 hover:bg-[#111111] text-gray-200 font-medium py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             <MeditationIcon />
@@ -126,10 +127,12 @@ const HomePage: NextPage = () => {
       <section className="bg-white text-black py-20 px-4 sm:py-24 md:py-32">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-gray-900">
-            Let&apos;s build something meaningful.
+            Infra so solid, even the chaos monkey gives up.
           </h2>
           <p className="mt-8 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Most developers chase complexity. I choose clarity. While others build features, I build solutions that last. <span className="bg-black text-white px-2 py-1 rounded-md">Every line of code, a deliberate choice. Every feature, a human need.</span> You&apos;re here because you value substance over spectacle. Let&apos;s create something that serves people, not algorithms.
+            Some chase feature velocity. I chase zero downtime. 
+            <span className="bg-black text-white px-2 py-1 rounded-md">From Dockerfiles to deployment, every step is intentional.</span> 
+            If your infra isn’t predictable, it’s just expensive chaos. Let’s build something that runs smooth — no smoke, no mirrors.
           </p>
 
           <div className="my-16 text-gray-300 text-2xl tracking-[0.5em]">
@@ -141,7 +144,6 @@ const HomePage: NextPage = () => {
           </h3>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {/* Social Link Items... */}
             <a href="https://www.linkedin.com/in/rahul-yadav-2a4b3b199/" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-blue-600 transition-colors">
                 <LinkedInIcon />
@@ -149,12 +151,13 @@ const HomePage: NextPage = () => {
               <h4 className="font-bold mt-4 text-gray-900">LinkedIn</h4>
               <p className="text-sm text-gray-500">Professional</p>
             </a>
-            <a href="https://x.com/rxhxlyadav" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
-              <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-black transition-colors">
-                <XIcon />
+            {/* MODIFIED: Replaced X/Twitter with Mail */}
+            <a href="mailto:rahulkyadav9691@gmail.com" rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
+              <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-gray-800 transition-colors">
+                <MailIcon />
               </div>
-              <h4 className="font-bold mt-4 text-gray-900">X (Twitter)</h4>
-              <p className="text-sm text-gray-500">Most Active</p>
+              <h4 className="font-bold mt-4 text-gray-900">Mail</h4>
+              <p className="text-sm text-gray-500">Easy Way</p>
             </a>
             <a href="https://github.com/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
               <div className="w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full group-hover:bg-gray-800 transition-colors">
