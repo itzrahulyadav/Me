@@ -60,13 +60,7 @@ const ContentStudioIcon = () => (
     </svg>
 );
 
-const CursorIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        <path d="m9.09 9.91 5.82 5.82"/>
-        <path d="m14.91 9.91-5.82 5.82"/>
-    </svg>
-);
+
 
 const ClockIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600">
@@ -109,11 +103,11 @@ const HomePage: NextPage = () => {
         <main className="flex flex-col items-center justify-center text-center z-10">
           <div className="relative inline-block mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter max-w-5xl leading-tight">
-              Not your average software engineer.
+              Not your <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">average</span> software engineer.
             </h1>
           </div>
           <p className="mt-2 text-xl sm:text-2xl md:text-3xl text-gray-400 max-w-3xl">
-            I build in Cloud &apos; with Clarity and optimization
+            My cloud setup?Runs smoother than your situationship.
           </p>
           <button className="mt-12 flex items-center justify-center space-x-2.5 bg-[#090909] border border-gray-800 hover:border-gray-600 hover:bg-[#111111] text-gray-200 font-medium py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
             <MeditationIcon />
@@ -196,7 +190,6 @@ const HomePage: NextPage = () => {
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
               {skills.map((skill) => (
                 <div key={skill.name} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  {/* CORRECTED: Using next/image for optimized images */}
                   <Image
                     src={skill.image}
                     alt={`${skill.name} logo`}
@@ -211,48 +204,23 @@ const HomePage: NextPage = () => {
         </div>
       </section>
 
-      {/* Section 3: Tools I Crafted */}
+      {/* Section 3: Projects I've Created */}
       <section className="bg-white text-black pt-20 pb-20 px-4 sm:pt-24 sm:pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block relative mb-4">
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Tools I Crafted</h2>
-                <span className="absolute -top-3 -right-4 bg-red-200 text-gray-500 text-xs font-semibold px-2 py-1 rounded-full transform -rotate-12">for myself</span>
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Projects I&apos;ve Created</h2>
+                <span className="absolute -top-3 -right-4 bg-red-200 text-black text-xs font-semibold px-2 py-1 rounded-full transform -rotate-12">Dope</span>
             </div>
             <p className="text-lg text-gray-500">Specialized solutions for specific challenges</p>
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                {/* (Your tool cards remain here, unchanged) */}
-                <a href="https://github.com/itzrahulyadav/awsx" target="blank" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
+                <a href="https://github.com/itzrahulyadav/awsx" target="_blank" rel="noopener noreferrer" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                     <ContentStudioIcon />
                     <h4 className="font-bold text-lg mt-4 text-gray-900">awsx</h4>
                     <p className="mt-2 text-gray-600">Ever stuck in a network reachability issue, awsx helps you check connectivity between two endpoints</p>
                     <div className="mt-6 flex justify-between items-center">
                         <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Networking</span>
-                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
-                            Explore Tool <ArrowRightIcon />
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/itzrahulyadav/awsx" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-500 to-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
-                    <CursorIcon />
-                    <h4 className="font-bold text-lg mt-4 text-gray-900">Angular Cursor Rules</h4>
-                    <p className="mt-2 text-gray-600">AI-powered cursor interaction generator for Angular applications that creates custom pointer behaviors based on UI elements.</p>
-                    <div className="mt-6 flex justify-between items-center">
-                        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Developer Tool</span>
-                        <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
-                            Explore Tool <ArrowRightIcon />
-                        </div>
-                    </div>
-                </a>
-                <a href="#" className="group relative block border border-gray-200 p-6 rounded-xl overflow-hidden">
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
-                    <ClockIcon />
-                    <h4 className="font-bold text-lg mt-4 text-gray-900">Am I a Top Performer?</h4>
-                    <p className="mt-2 text-gray-600">Interactive assessment tool that evaluates your professional performance and provides personalized insights for growth and improvement.</p>
-                    <div className="mt-6 flex justify-between items-center">
-                        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Self-Assessment</span>
                         <div className="group text-gray-600 hover:text-black font-semibold flex items-center text-sm">
                             Explore Tool <ArrowRightIcon />
                         </div>
