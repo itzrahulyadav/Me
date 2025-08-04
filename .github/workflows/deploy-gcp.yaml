@@ -6,7 +6,7 @@ on:
 
 env:
   GCP_PROJECT_ID: "oasis-0000"
-  GAR_LOCATION: "asia-south-1" 
+  GAR_LOCATION: "asia-south1" 
   GAR_REPOSITORY: "me" 
   IMAGE_NAME: "my-site" 
 
