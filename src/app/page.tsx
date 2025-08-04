@@ -93,7 +93,7 @@ const HomePage: NextPage = () => {
   return (
     <div className={geist.className}>
       {/* Section 1: Hero */}
-      <section className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
         {/* MODIFIED: Added a wrapper div for the gradient border */}
         <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20">
           <a href="https://www.credly.com/users/aurafarmer/badges#credly" target='blank'>
@@ -129,7 +129,7 @@ const HomePage: NextPage = () => {
       </section>
 
       {/* Section 2: Content */}
-      <section className="bg-white text-black py-20 px-4 sm:py-24 md:py-32">
+      <section className="bg-black text-white py-20 px-4 sm:py-24 md:py-32">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-gray-900">
             Infra so solid, even the chaos monkey gives up.
