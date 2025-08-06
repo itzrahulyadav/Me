@@ -273,6 +273,20 @@ const HomePage: NextPage = () => {
                   </div>
                 </div>
               </a>
+
+              <a href="https://hack-the-net-412486075231.asia-south1.run.app" target="_blank" rel="noopener noreferrer" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                <ContentStudioIcon />
+                <h4 className="font-bold text-lg mt-4 text-gray-900">Hack the net</h4>
+                <p className="mt-2 text-gray-600">Hack the net gives public information about domains and IP addresses</p>
+                <div className="mt-6 flex justify-between items-center">
+                  <span className="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">Networking</span>
+                  <div className="group text-gray-500 hover:text-gray-900 font-semibold flex items-center text-sm">
+                    Check out <ArrowRightIcon />
+                  </div>
+                </div>
+              </a>
+
               <a href="#" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                 <div className="flex justify-between items-start">
