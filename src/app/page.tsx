@@ -3,21 +3,21 @@
 import type { NextPage } from 'next';
 import { Geist } from 'next/font/google';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const geist = Geist({ subsets: ['latin'] });
 
-const LightningBoltIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 12L13 2H7l4 10H5l7 10z" />
-    </svg>
-);
+// const LightningBoltIcon = () => (
+//     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+//         <path d="M21 12L13 2H7l4 10H5l7 10z" />
+//     </svg>
+// );
 
-const ThunderStrikeIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-1.5">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-    </svg>
-);
+// const ThunderStrikeIcon = () => (
+//     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-1.5">
+//         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+//     </svg>
+// );
 
 const LinkedInIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-gray-500 group-hover:text-blue-500 transition-colors">
@@ -89,119 +89,22 @@ const HomePage: NextPage = () => {
 
   return (
     <>
-      <style jsx global>{`
-        @keyframes kenburns {
-          0% {
-            transform: scale(1) translate(0, 0);
-          }
-          100% {
-            transform: scale(1.2) translate(-2%, -2%);
-          }
-        }
-        
-        @keyframes lightningFlash {
-          0%, 90% { 
-            opacity: 0; 
-          }
-          91% {
-            opacity: 0.9;
-          }
-          92% {
-            opacity: 0.3;
-          }
-          93% {
-            opacity: 0.7;
-          }
-          94% {
-            opacity: 0.2;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
+      <div className={`${geist.className} bg-white`}>
 
-        @keyframes sparkGlow {
-          0% {
-            box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
-          }
-          70% {
-            box-shadow: 0 0 0 8px rgba(234, 179, 8, 0);
-          }
-          100% {
-            box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
-          }
-        }
-
-        .hero-background-image {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          animation: kenburns 25s ease-out infinite alternate;
-        }
-
-        .lightning-overlay::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background-color: #eab308;
-          opacity: 0;
-          animation: lightningFlash 5s ease-out infinite;
-          z-index: 1;
-        }
-        
-        .dark-thunder-icon {
-          stroke: #374151; /* gray-700 */
-        }
-      `}</style>
-      
-      <div className={`${geist.className} bg-white relative`}>
-        
-        <section className="min-h-screen text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/zenitsu.png"
-              alt="Zenitsu Agatsuma"
-              layout="fill"
-              className="hero-background-image"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/50 z-1"></div>
-          </div>
-          
-          <div className="absolute inset-0 lightning-overlay z-3"></div>
-
-          <div className="fixed top-6 right-6 md:top-8 md:right-8 z-20">
-            <a href="https://www.credly.com/users/aurafarmer/badges#credly" target='_blank'>
-              <div className="bg-black/50 text-white text-xs sm:text-sm px-4 py-2 rounded-xl backdrop-blur-lg border border-yellow-400 font-medium">
-                Rahul Yadav – Software Engineer who likes aura farming
-              </div>
-            </a>
-          </div>
-
-          <main className="flex flex-col items-center justify-center text-center z-10">
-            <div className="relative inline-block mb-8">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter max-w-5xl leading-tight">
-                Not your <span className="bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 bg-clip-text text-transparent">average</span> software engineer
+        <section className="min-h-screen bg-gradient-to-bl from-blue-200 to-white text-gray-800 flex items-center justify-center p-4">
+          <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900">
+                Not your <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent px-2 py-1 rounded-md">average</span>
+                <br />
+                <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-pink-400 bg-clip-text text-transparent px-2 py-1 rounded-md"></span>software engineer
               </h1>
             </div>
-            <p className="mt-2 text-xl sm:text-2xl md:text-3xl text-gray-200 max-w-3xl">
-              Building systems that strike like lightning. Ready to spark your next project?
-            </p>
-
-            <Link href="#content">
-              <button className="mt-12 flex items-center justify-center space-x-2.5 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 spark-glow">
-                <LightningBoltIcon />
-                <span>Explore</span>
-              </button>
-            </Link>
-          </main>
-
-          <div className="absolute bottom-8 sm:bottom-10 text-gray-400 flex items-center animate-bounce z-10">
-            <span>Scroll</span>
-            <ThunderStrikeIcon />
-            <span>to Ignite</span>
+            <div className="text-left">
+              <p className="text-xl sm:text-2xl text-gray-600">
+                Building systems that strike like lightning. Ready to spark your next project?
+              </p>
+            </div>
           </div>
         </section>
 
@@ -234,10 +137,10 @@ const HomePage: NextPage = () => {
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Technologies I Work With</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Tools and tech I wield to craft lightning-fast, robust solutions.</p>
-            
+
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
               {skills.map((skill) => (
-                <div key={skill.name} className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col items-center justify-center transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
+                <div key={skill.name} className="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col items-center justify-center transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg">
                   <Image
                     src={skill.image}
                     alt={`${skill.name} logo`}
@@ -261,7 +164,7 @@ const HomePage: NextPage = () => {
             <p className="text-lg text-gray-600">Solutions that cut through challenges with precision</p>
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-              <a href="https://github.com/itzrahulyadav/awsx" target="_blank" rel="noopener noreferrer" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
+              <a href="https://github.com/itzrahulyadav/awsx" target="_blank" rel="noopener noreferrer" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg">
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                 <ContentStudioIcon />
                 <h4 className="font-bold text-lg mt-4 text-gray-900">awsx</h4>
@@ -274,7 +177,7 @@ const HomePage: NextPage = () => {
                 </div>
               </a>
 
-              <a href="https://hack-the-net-412486075231.asia-south1.run.app" target="_blank" rel="noopener noreferrer" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
+              <a href="https://hack-the-net-412486075231.asia-south1.run.app" target="_blank" rel="noopener noreferrer" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg">
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                 <ContentStudioIcon />
                 <h4 className="font-bold text-lg mt-4 text-gray-900">Hack the net</h4>
@@ -287,7 +190,7 @@ const HomePage: NextPage = () => {
                 </div>
               </a>
 
-              <a href="#" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg spark-glow">
+              <a href="#" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg">
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                 <div className="flex justify-between items-start">
                   <ClockIcon />
@@ -305,7 +208,7 @@ const HomePage: NextPage = () => {
             </div>
           </div>
         </section>
-        
+
         <section className="bg-gray-50 text-gray-900 py-20 px-4 sm:py-24 md:py-32 z-10 relative">
             <div className="max-w-6xl mx-auto text-center">
                 <h3 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">
@@ -316,19 +219,19 @@ const HomePage: NextPage = () => {
                 </p>
 
                 <div className="mt-12 flex items-center justify-center gap-4 md:gap-6 max-w-5xl mx-auto">
-                    <a href="https://www.linkedin.com/in/rahul-yadav-2a4b3b199/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200 spark-glow">
+                    <a href="https://www.linkedin.com/in/rahul-yadav-2a4b3b199/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200">
                         <LinkedInIcon />
                     </a>
-                    <a href="mailto:rahulkyadav9691@gmail.com" rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200 spark-glow">
+                    <a href="mailto:rahulkyadav9691@gmail.com" rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200">
                         <MailIcon />
                     </a>
-                    <a href="https://github.com/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200 spark-glow">
+                    <a href="https://github.com/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200">
                         <GitHubIcon />
                     </a>
-                    <a href="https://leetcode.com/u/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200 spark-glow">
+                    <a href="https://leetcode.com/u/itzrahulyadav/" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200">
                         <LeetCodeIcon />
                     </a>
-                    <a href="https://www.instagram.com/_rxhxlx_" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200 spark-glow">
+                    <a href="https://www.instagram.com/_rxhxlx_" target='_blank' rel="noopener noreferrer" className="group p-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-200">
                         <InstagramIcon />
                     </a>
                 </div>
