@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 import { Geist } from 'next/font/google';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const geist = Geist({ subsets: ['latin'] });
 
@@ -32,7 +33,7 @@ const LeetCodeIcon = () => (
 
 const InstagramIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7 sm:h-8 w-8 md:h-10 md:w-10 text-gray-500 group-hover:text-pink-500 transition-colors">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.883-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path>
     </svg>
 );
 
@@ -61,6 +62,16 @@ const ArrowRightIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const HomePage: NextPage = () => {
+  const words = ['average', 'basic', 'normal', 'mediocre', 'riffraff','ordinary','amateur','so-so','common'];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   const skills = [
     { name: 'AWS', image: '/icons/icons8-amazon-web-services.svg' },
     { name: 'GCP', image: '/icons/icons8-google-cloud.svg' },
@@ -82,9 +93,12 @@ const HomePage: NextPage = () => {
           <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="text-left">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900">
-                Not your <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent px-2 py-1 rounded-md">average</span>
+                Not your{' '}
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent px-2 py-1 rounded-md inline-block animate-fade">
+                  {words[currentWordIndex]}
+                </span>
                 <br />
-                <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-pink-400 bg-clip-text text-transparent px-2 py-1 rounded-md"></span>software engineer
+                software engineer
               </h1>
             </div>
             <div className="text-left">
@@ -94,6 +108,18 @@ const HomePage: NextPage = () => {
             </div>
           </div>
         </section>
+
+        <style jsx>{`
+          @keyframes fade {
+            0% { opacity: 0; transform: translateY(10px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+          }
+          .animate-fade {
+            animation: fade 1s ease-in-out infinite;
+          }
+        `}</style>
 
         <section id="content" className="text-gray-900 bg-gray-50 py-20 px-4 sm:py-24 md:py-32 z-10 relative">
           <div className="max-w-6xl mx-auto text-center">
@@ -141,7 +167,7 @@ const HomePage: NextPage = () => {
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-gray-900">About Me</h1>
             <h3 className="mt-6 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-800">
-             I am Rahul Yadav
+             I am Rahul Yadav 👋
             </h3>
             <div className="mt-8 text-lg text-gray-600 max-w-3xl mx-auto space-y-6 text-left leading-relaxed">
               <p>As an enthusiastic DevOps engineer, I excel at unraveling intricate Kubernetes challenges and resolving complex networking issues, while passionately architecting scalable, resilient systems using my expertise in AWS, GCP, and distributed systems design. Additionally, as a full-stack tinkerer, I embrace serverless technologies and leverage my proficiency in Go to build high-performance, concurrent applications, crafting end-to-end solutions with a focus on both front-end polish and back-end robustness.</p>
@@ -152,7 +178,7 @@ const HomePage: NextPage = () => {
         <section className="bg-gray-50 text-gray-900 py-20 px-4 sm:py-24 z-10 relative">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter leading-tight text-gray-900">Technologies I Work With</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Tools and tech I wield to craft lightning-fast, robust solutions.</p>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Tools and tech I love to work with</p>
 
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
               {skills.map((skill) => (
