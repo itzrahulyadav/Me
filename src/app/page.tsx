@@ -61,6 +61,14 @@ const ArrowRightIcon = ({ className = "" }: { className?: string }) => (
     </svg>
 );
 
+const BookOpenIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-gray-500 group-hover:text-blue-500 transition-colors">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </svg>
+);
+
+
 const HomePage: NextPage = () => {
   const words = ['average', 'basic', 'normal', 'mediocre', 'riffraff','ordinary','amateur','so-so','common'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -83,6 +91,14 @@ const HomePage: NextPage = () => {
     { name: 'ArgoCD', image: '/icons/argoprojio-icon.svg' },
     { name: 'Networking', image: '/icons/icons8-decentralized-network-100.png' },
     { name: 'Security', image: '/icons/icons8-protect-94.png' },
+  ];
+
+  const learningLinks = [
+    { label: 'Dynamodb DB Whitepapers', link: 'https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf' },
+    { label: 'Google Spanner', link: 'https://blog.bytebytego.com/p/how-google-spanner-powers-trillions' },
+    { label: 'S3', link: 'https://aws.amazon.com/s3/whitepaper-best-practices-s3-performance/' },
+    { label: 'Deep Dive into eBPF', link: '#' },
+    { label: 'Service Mesh Istio in Production', link: '#' }
   ];
 
   return (
@@ -133,6 +149,35 @@ const HomePage: NextPage = () => {
             </p>
           </div>
         </section>
+                <section className="bg-gray-50 text-gray-900 py-20 px-4 sm:py-24 z-10 relative">
+            <div className="max-w-5xl mx-auto text-center">
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter text-gray-900">Currently Learning</h2>
+                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">I love reading about smart engineering decisions</p>
+
+                <div className="mt-12 space-y-4 text-left max-w-2xl mx-auto">
+                    {learningLinks.map((item, index) => (
+                        <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className="group flex items-center bg-white p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                            <div className="flex-shrink-0 p-2 bg-gray-100 rounded-full">
+                                <BookOpenIcon />
+                            </div>
+                            <div className="ml-4 flex-grow">
+                                <p className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">{item.label}</p>
+                            </div>
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                <ArrowRightIcon className="text-blue-500"/>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+                <div className="mt-12">
+                    <a href="/content" className="inline-flex items-center font-semibold text-blue-600 hover:text-blue-800 group">
+                        Read More
+                        <ArrowRightIcon className="ml-1 h-5 w-5" />
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section className="bg-gray-50 text-gray-900 py-20 px-4 sm:py-24 md:py-32 z-10 relative">
           <div className="max-w-6xl mx-auto text-center">
@@ -140,7 +185,7 @@ const HomePage: NextPage = () => {
               Ready to Connect?
             </h3>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Let&apos;s build something electric together. Reach out and let the sparks fly.
+              Let&apos;s build something together.
             </p>
 
             <div className="mt-12 flex flex-row items-center justify-center gap-2 sm:gap-4 md:gap-6 max-w-5xl mx-auto overflow-x-auto">
@@ -232,7 +277,7 @@ const HomePage: NextPage = () => {
                 </div>
               </a>
 
-              <a href="https://github.com/itzrahulyadav" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-pink-500 hover:shadow-lg">
+              <a href="https://github.com/itzrahulyadav" target= "_blank" className="group relative block bg-white border border-gray-200 p-6 rounded-xl overflow-hidden transition-all duration-300 hover:border-pink-500 hover:shadow-lg">
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
                 <div className="flex justify-between items-start">
                   <ClockIcon />
@@ -250,6 +295,7 @@ const HomePage: NextPage = () => {
             </div>
           </div>
         </section>
+
       </div>
     </>
   );
